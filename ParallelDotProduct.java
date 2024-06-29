@@ -42,21 +42,21 @@ public class ParallelDotProduct {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
-        System.out.print("Enter the size of the vectors: ");
+       
+        System.out.print("Vektorlerin boyutunu girin: ");
         int size = scanner.nextInt();
 
         int[] vector1 = new int[size];
         int[] vector2 = new int[size];
 
-
-        System.out.println("Enter elements of the first vector:");
+        
+        System.out.println("Birinci vektorun elemanlarini girin:");
         for (int i = 0; i < size; i++) {
             vector1[i] = scanner.nextInt();
         }
 
-
-        System.out.println("Enter elements of the second vector:");
+       
+        System.out.println("Ikinci vektorun elemanlarini girin:");
         for (int i = 0; i < size; i++) {
             vector2[i] = scanner.nextInt();
         }
@@ -65,9 +65,10 @@ public class ParallelDotProduct {
         DotProductTask task = new DotProductTask(vector1, vector2, 0, size);
 
         int result = pool.invoke(task);
-        System.out.println("Dot product of the vectors is: " + result);
+        System.out.println("Vektorlerin ic carpimi: " + result);
 
         scanner.close();
     }
 }
+
 
